@@ -31,3 +31,10 @@ if username == u and password == p:
 else:
     print("Invalid username or password")
 
+#q5. Wap to check if a number is even or odd
+num = int(input("Please enter a number: "))
+if num % 2 == 0:
+    print(f"The number you entered, {num} is Even")
+else:
+    print(f"The number you entered, {num} is Odd")
+
