@@ -243,236 +243,236 @@
 
 #q112. Simulate circular buffer
 
-Implement priority queue using lists
+#q113. Implement priority queue using lists
 
-Build binary tree from traversal sequences
+#q114. Build binary tree from traversal sequences
 
-Find shortest path in 2D grid
+#q115. Find shortest path in 2D grid
 
-Count islands in boolean matrix
+#q116. Count islands in boolean matrix
 
-Implement rat in a maze solver
+#q117. Implement rat in a maze solver
 
-Solve word search in grid
+#q118. Solve word search in grid
 
-Generate all valid parentheses combinations
+#q119. Generate all valid parentheses combinations
 
-SPECIAL CATEGORIES
-Loop Control Mastery
-Use break to find first negative number in list
+### SPECIAL CATEGORIES
+##  Loop Control Mastery
+#q120. Use break to find first negative number in list
 
-Use continue to skip multiples of 3
+#q121. Use continue to skip multiples of 3
 
-Use else clause with loops
+#q122. Use else clause with loops
 
-Implement nested loops with multiple break statements
+#q123. Implement nested loops with multiple break statements
 
-Use loop with enumerate()
+#q124. Use loop with enumerate()
 
-Use loop with zip()
+#q125. Use loop with zip()
 
-Iterate dictionary with items()
+#q126. Iterate dictionary with items()
 
-Use list comprehension vs traditional loops
+#q127. Use list comprehension vs traditional loops
 
-Implement generator with yield in loop
+#q128. Implement generator with yield in loop
 
-Use itertools functions with loops
+#q129. Use itertools functions with loops
 
-Error Handling in Loops
-Handle division by zero in loop
+### Error Handling in Loops
+#q130. Handle division by zero in loop
 
-Skip invalid data entries while processing
+#q131. Skip invalid data entries while processing
 
-Implement timeout for long-running loops
+#q132. Implement timeout for long-running loops
 
-Handle keyboard interrupt in infinite loops
+#q133. Handle keyboard interrupt in infinite loops
 
-Implement retry mechanism in loops
+#q134. Implement retry mechanism in loops
 
-Memory Efficient Loops
-Process large files line by line
+### Memory Efficient Loops
+#q135. Process large files line by line
 
-Generate infinite sequences with while
+#q136. Generate infinite sequences with while
 
-Implement pagination with loops
+#q137. Implement pagination with loops
 
-Process streaming data in chunks
+#q138. Process streaming data in chunks
 
-Implement circular linked list traversal
+#q139. Implement circular linked list traversal
 
-COMPREHENSIVE PROJECTS
-Mini Projects Using Loops
-Create ASCII art generator
+### COMPREHENSIVE PROJECTS
+## Mini Projects Using Loops
+#q140. Create ASCII art generator
 
-Build calendar generator for any month/year
+#q141. Build calendar generator for any month/year
 
-Implement simple encryption/decryption
+#q142. Implement simple encryption/decryption
 
-Create progress bar simulation
+#q143. Create progress bar simulation
 
-Build histogram generator
+#q144. Build histogram generator
 
-Implement data validation system
+#q145. Implement data validation system
 
-Create report generator with formatting
+#q146. Create report generator with formatting
 
-Build simple spreadsheet calculator
+#q147. Build simple spreadsheet calculator
 
-Implement basic image processing (ASCII art)
+#q148. Implement basic image processing (ASCII art)
 
-Create command-line menu system
+#q149. Create command-line menu system
 
-TRICKY INTERVIEW QUESTIONS
-What happens when you modify list while iterating?
+### TRICKY INTERVIEW QUESTIONS
+#q150. What happens when you modify list while iterating?
 
-How to iterate over multiple lists simultaneously?
+#q151. How to iterate over multiple lists simultaneously?
 
-Difference between range() and xrange() in Python 2
+#q152. Difference between range() and xrange() in Python 2
 
-How to create infinite loops and break them?
+#q153. How to create infinite loops and break them?
 
-Most efficient way to iterate over large datasets?
+#q154. Most efficient way to iterate over large datasets?
 
-When to use for vs while loops?
+#q155. When to use for vs while loops?
 
-How to avoid off-by-one errors in loops?
+#q156. How to avoid off-by-one errors in loops?
 
-What is loop unrolling and when to use it?
+#q157. What is loop unrolling and when to use it?
 
-How to debug infinite loops?
+#q158. How to debug infinite loops?
 
-Time and space complexity analysis of nested loops
+#q159. Time and space complexity analysis of nested loops
 
-PROBLEM-SOLVING PATTERNS
-Two-pointer technique: Find pair with given sum in sorted array
+### PROBLEM-SOLVING PATTERNS
+#q160. Two-pointer technique: Find pair with given sum in sorted array
 
-Sliding window: Find maximum sum of subarray of size K
+#q161. Sliding window: Find maximum sum of subarray of size K
 
-Fast and slow pointers: Detect cycle in array
+#q162. Fast and slow pointers: Detect cycle in array
 
-Merge intervals: Combine overlapping intervals
+#q163. Merge intervals: Combine overlapping intervals
 
-Cyclic sort: Find missing number in array
+#q164. Cyclic sort: Find missing number in array
 
-In-place reversal: Reverse array in-place
+#q165. In-place reversal: Reverse array in-place
 
-Tree BFS: Level order traversal
+#q166. Tree BFS: Level order traversal
 
-Tree DFS: All paths from root to leaf
+#q167. Tree DFS: All paths from root to leaf
 
-Subsets: All subsets of distinct numbers
+#q168. Subsets: All subsets of distinct numbers
 
-Modified binary search: Find element in rotated array
+#q169. Modified binary search: Find element in rotated array
 
-COMPANY SPECIFIC PATTERNS
-Google-style: Optimize loop-heavy algorithms
+### COMPANY SPECIFIC PATTERNS
+#q170. Google-style: Optimize loop-heavy algorithms
 
-Facebook-style: Matrix manipulation problems
+#q171. Facebook-style: Matrix manipulation problems
 
-Amazon-style: Array/string manipulation at scale
+#q172. Amazon-style: Array/string manipulation at scale
 
-Microsoft-style: System design with loops
+#q173. Microsoft-style: System design with loops
 
-Apple-style: Memory-efficient iterations
+#q174. Apple-style: Memory-efficient iterations
 
-BONUS: REAL INTERVIEW QUESTIONS
-"Print a binary tree in vertical order"
+### BONUS: REAL INTERVIEW QUESTIONS
+#q175. "Print a binary tree in vertical order"
 
-"Find the celebrity in a party"
+#q176. "Find the celebrity in a party"
 
-"Implement a circular queue"
+#q177. "Implement a circular queue"
 
-"Find the kth largest element"
+#q178. "Find the kth largest element"
 
-"Merge k sorted lists"
+#q179. "Merge k sorted lists"
 
-"Find the median of two sorted arrays"
+#q180. "Find the median of two sorted arrays"
 
-"Longest substring without repeating characters"
+#q181. "Longest substring without repeating characters"
 
-"Trapping rain water problem"
+#q182. "Trapping rain water problem"
 
-"Word break problem"
+#q183. "Word break problem"
 
-"Coin change problem"
+#q184. "Coin change problem"
 
-"Minimum window substring"
+#q185. "Minimum window substring"
 
-"Serialize and deserialize binary tree"
+#q186. "Serialize and deserialize binary tree"
 
-"Course schedule problem"
+#q187. "Course schedule problem"
 
-"Alien dictionary"
+#q188. "Alien dictionary"
 
-"Number of islands"
+#q189. "Number of islands"
 
-"Word ladder"
+#q190. "Word ladder"
 
-"LRU cache implementation"
+#q191. "LRU cache implementation"
 
-"Find duplicate number"
+#q192. "Find duplicate number"
 
-"Maximum product subarray"
+#q193. "Maximum product subarray"
 
-"Find minimum in rotated sorted array"
+#q194. "Find minimum in rotated sorted array"
 
-"Count of smaller numbers after self"
+#q195. "Count of smaller numbers after self"
 
-"Palindrome partitioning"
+#q196. "Palindrome partitioning"
 
-"Word search II"
+#q197. "Word search II"
 
-"Basic calculator"
+#q198. "Basic calculator"
 
-"The skyline problem"
+#q199. "The skyline problem"
 
-PRACTICE STRATEGY:
-Week 1-2: Beginner + Intermediate (60 questions)
-5 questions daily with time limit
+### PRACTICE STRATEGY:
+# Week 1-2: Beginner + Intermediate (60 questions)
+# 5 questions daily with time limit
 
-Focus on pattern recognition
+# Focus on pattern recognition
 
-Master both for and while loops
+# Master both for and while loops
 
-Week 3-4: Advanced + Expert (80 questions)
-Complex algorithms and optimizations
+# Week 3-4: Advanced + Expert (80 questions)
+# Complex algorithms and optimizations
 
-Time/space complexity analysis
+# Time/space complexity analysis
 
-Error handling and edge cases
+# Error handling and edge cases
 
-Week 5: Special Categories + Company Specific
-Problem-solving patterns
+# Week 5: Special Categories + Company Specific
+# Problem-solving patterns
 
-Mock interviews
+# Mock interviews
 
-Speed and accuracy training
+# Speed and accuracy training
 
-Week 6: Revision + Mock Interviews
-Revisit difficult problems
+# Week 6: Revision + Mock Interviews
+# Revisit difficult problems
 
-Timed practice sessions
+# Timed practice sessions
 
-Explain your solutions aloud
+# Explain your solutions aloud
 
-TIPS FOR SUCCESS:
-Start simple: Build confidence with easy problems
+# TIPS FOR SUCCESS:
+# Start simple: Build confidence with easy problems
 
-Time yourself: 15-20 minutes per problem initially
+# Time yourself: 15-20 minutes per problem initially
 
-Write on paper: Practice whiteboard coding
+# Write on paper: Practice whiteboard coding
 
-Test thoroughly: Check edge cases
+# Test thoroughly: Check edge cases
 
-Optimize: Always look for better solutions
+# Optimize: Always look for better solutions
 
-Explain: Practice explaining your thought process
+# Explain: Practice explaining your thought process
 
-Review: Revisit problems you found difficult
+# Review: Revisit problems you found difficult
 
-Pattern recognition: Group similar problems
+# Pattern recognition: Group similar problems
 
-Consistency: Daily practice is key
+# Consistency: Daily practice is key
 
-Mock interviews: Simulate real interview conditions
+# Mock interviews: Simulate real interview conditions
