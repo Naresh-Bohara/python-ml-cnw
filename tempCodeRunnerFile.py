@@ -1,1 +1,0 @@
-num.sort(reverse=True)
