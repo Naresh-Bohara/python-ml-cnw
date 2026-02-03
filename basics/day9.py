@@ -132,21 +132,54 @@ ls = [
 print(dict(ls))
 
 ## Searching:
-d ={
+# d ={
+#     "name": ["Ram", "Shyam", "Hari"],
+#     "age": [22, 23, 24],
+#     "address": ["ktm", "dhangadhi", "pokhara"]
+# }
+
+# found=False
+# for i in d["name"]:
+#     if i.lower()=="shyam":
+#         print("Found")
+#         found=True
+    
+# if not found:
+#     print("Not found")
+
+d = {
     "name": ["Ram", "Shyam", "Hari"],
     "age": [22, 23, 24],
     "address": ["ktm", "dhangadhi", "pokhara"]
 }
 
-found=False
+target = input("Please enter target: ").lower()
+found = False
+count = 0
 for i in d["name"]:
-    if i.lower()=="shyam":
-        print("Found")
-        found=True
-    
+    if i.lower() == target:
+        print(f"Found {target} at index {count}")
+        found = True
+    count += 1
 if not found:
-    print("Not found")
+    print("Target not found.") 
 
+# # Search for "Shyam" and get his index
+# d = {
+#     "name": ["Ram", "Shyam", "Hari"],
+#     "age": [22, 23, 24],
+#     "address": ["ktm", "dhangadhi", "pokhara"]
+# }
+
+# target = input("Please enter target: ").lower()
+# for index, name in enumerate(d["name"]):
+#     if name.lower() == target:
+#         print(f"Found Shyam at index {index}")
+#         print(f"Age: {d['age'][index]}")
+#         print(f"Address: {d['address'][index]}")
+#         break
+# else:
+#     print("Not found")
 
 
 ### Nested Dictionaries

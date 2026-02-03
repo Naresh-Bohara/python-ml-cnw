@@ -12,8 +12,10 @@ print("Sum:", sum)
 # are case-sensitive
 # cannot be a reserved keyword in Python
 
-name = "Alice"
+name = "Naresh"
 _age = 30   
 _isStudent = False
 height_cm = 170.5
 print("Name:", name)
+
+
