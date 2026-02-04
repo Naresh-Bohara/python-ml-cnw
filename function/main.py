@@ -44,6 +44,10 @@ def greet():
 #     return "hello "+name
 # print(greeting("Naresh"))
 
+# def greeting(name):
+#     return print(f"hello {name}")
+# (greeting("Nareshzz"))
+
 
 ## Default argument function:
 # def greet(name = "Naresh"):
@@ -180,6 +184,6 @@ for k1, v1 in students.items():  # First level: student1, student2, etc.
     print(f"Outer Value (full dict): {v1}")
     
     for k2, v2 in v1.items():  # Second level: name, age
-        print(f"  Inner Key: {k2}")
-        print(f"  Inner Value: {v2}")
+        print(f"{k2}: {v2}")
+        # print(f"  Inner Value: {v2}")
 
