@@ -8,6 +8,7 @@
 - email validation, ends with @gmail.com
 - age validation, between 5 and 105
 - arguments pasing for crud operations
+- search operations
 - use of match-case
 """
 
