@@ -1,2 +1,2 @@
-This file  created using 'w+' mode.
-This   added using .
+This file was created  'w+' mode.
+This  was   'a+' mode.
