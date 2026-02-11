@@ -46,8 +46,14 @@
 
     
 # IndexError:
+# try:
+#     my_list = [1, 2, 3]
+#     print(my_list[5])
+# except IndexError as ie:
+#     print("Index Error:", ie)
+
+#  import error:
 try:
-    my_list = [1, 2, 3]
-    print(my_list[5])
-except IndexError as ie:
-    print("Index Error:", ie)
+    import naresh_bohara_module
+except ImportError as ie:
+    print("Import Error:", ie)
