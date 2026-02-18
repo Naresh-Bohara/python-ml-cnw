@@ -53,3 +53,20 @@ rectangle = Rectangle()
 circle.area()  # Output: Calculating area of a shape. Calculating area of a circle.
 rectangle.area()  # Output: Calculating area of a shape. Calculating area of a rectangle.
 
+# Method ovrriding with constructors and parameters:
+class Person:
+    def __init__(self, name):
+        self.name = name
+    def introduce(self):
+        print(f"Hello, my name is {self.name}.")
+class Student(Person):
+    def __init__(self, name, student_id):
+        super().__init__(name)  # calling the constructor of the parent class
+        self.student_id = student_id  # adding a new attribute specific to Student
+    def introduce(self):
+        super().introduce()  # calling the introduce method of the parent class
+        print(f"My student ID is {self.student_id}.")  # adding additional behavior
+student1 = Student("Naresh Bohara", "S12345")
+student1.introduce()  # Output: Hello, my name is Naresh Bohara. My student ID is S12345.
+
+
