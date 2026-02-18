@@ -63,3 +63,24 @@ student1.study()      # Output: Naresh Bohara is studying.
 
 # is self and this is same: While self in Python and this in Java serve similar purposes in referring to the current instance of a class, they are not the same. Self is explicitly defined as a parameter in Python methods, while this is implicitly available in Java. Additionally, the syntax and usage of self and this differ between the two languages.
 
+### 
+class Counter:
+    def __init__(self):
+        self.count = 0  # initializing the count attribute
+
+    def increment(self):
+        self.count += 1  # incrementing the count attribute
+
+c1 = Counter()  # creating an object of the Counter class
+c2 = Counter()  # creating another object of the Counter class
+
+c1.increment()  # incrementing the count of c1
+c1.increment()  # incrementing the count of c1 again
+c2.increment()  # incrementing the count of c2
+
+print(c1.count)  # Output: 2
+print(c2.count)  # Output: 1
+
+
+### diff between object and variable: 
+# - An object is an instance of a class that has its own unique attributes and behaviors, while a variable is a named reference to a value stored in memory. An object can have multiple attributes and methods, while a variable can only hold a single value at a time. Objects are created using classes, while variables are created using assignment statements.
