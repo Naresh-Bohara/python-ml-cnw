@@ -47,3 +47,16 @@ change city address varchar(40);
 
 -- rename table:
 rename table students to students_info;
+
+-- adding new column in existing table:
+alter table students_info add email varchar(30);
+
+insert into students_info (id, name, age, address, email) values (1, "ram", 22, "ktm", "nam@gmail.com"),
+(2, "shyam", 23, "dhn", "shyam@gmail.com");
+
+-- viewing data 
+select * from students_info;
+select name, age, address from students_info;
+
+desc students_info;
+
