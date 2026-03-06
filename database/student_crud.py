@@ -1,80 +1,169 @@
-from db_connection import db_connect
-
-conn = db_connect()
-cursor = conn.cursor()
+from db_connection import connect_db
 
 
 def add_student():
-    name = input("Enter student name: ")
-    age = int(input("Enter student age: "))
-    city = input("Enter student city: ")
+    conn = None
+    cursor = None
+    try:
+        conn = connect_db()
+        if conn is None:
+            print("Database connection failed.")
+            return
 
-    sql = "INSERT INTO students (name, age, city) VALUES (%s, %s, %s)"
-    values = (name, age, city)
+        cursor = conn.cursor()
 
-    cursor.execute(sql, values)
-    conn.commit()
-    print("Student added successfully!")
+        name = input("Enter student name: ")
+        age = int(input("Enter student age: "))
+        city = input("Enter student city: ")
+
+        sql = "INSERT INTO students (name, age, city) VALUES (%s, %s, %s)"
+        cursor.execute(sql, (name, age, city))
+        conn.commit()
+
+        print("Student added successfully.")
+
+    except ValueError:
+        print("Age must be a number.")
+    except Exception as e:
+        print("Error while adding student:", e)
+    finally:
+        if cursor is not None:
+            cursor.close()
+        if conn is not None:
+            conn.close()
 
 
 def view_students():
-    sql = "SELECT * FROM students"
-    cursor.execute(sql)
-    records = cursor.fetchall()
+    conn = None
+    cursor = None
+    try:
+        conn = connect_db()
+        if conn is None:
+            print("Database connection failed.")
+            return
 
-    if records:
-        for record in records:
-            print(record)
-    else:
-        print("No students found.")
+        cursor = conn.cursor()
+        cursor.execute("SELECT * FROM students")
+        records = cursor.fetchall()
+
+        if not records:
+            print("No students found.")
+            return
+
+        print("\nID\tName\tAge\tCity")
+        for row in records:
+            print(f"{row[0]}\t{row[1]}\t{row[2]}\t{row[3]}")
+
+    except Exception as e:
+        print("Error while fetching students:", e)
+    finally:
+        if cursor is not None:
+            cursor.close()
+        if conn is not None:
+            conn.close()
 
 
 def update_student():
-    student_id = int(input("Enter student ID to update: "))
-    new_name = input("Enter new name: ")
-    new_age = int(input("Enter new age: "))
-    new_city = input("Enter new city: ")
+    conn = None
+    cursor = None
+    try:
+        conn = connect_db()
+        if conn is None:
+            print("Database connection failed.")
+            return
 
-    sql = "UPDATE students SET name = %s, age = %s, city = %s WHERE id = %s"
-    values = (new_name, new_age, new_city, student_id)
+        cursor = conn.cursor()
 
-    cursor.execute(sql, values)
-    conn.commit()
+        student_id = int(input("Enter student ID to update: "))
+        new_name = input("Enter new name: ")
+        new_age = int(input("Enter new age: "))
+        new_city = input("Enter new city: ")
 
-    if cursor.rowcount > 0:
-        print("Student updated successfully!")
-    else:
-        print("Student not found.")
+        sql = "UPDATE students SET name = %s, age = %s, city = %s WHERE id = %s"
+        cursor.execute(sql, (new_name, new_age, new_city, student_id))
+        conn.commit()
+
+        if cursor.rowcount == 0:
+            print("Student not found.")
+        else:
+            print("Student updated successfully.")
+
+    except ValueError:
+        print("ID and age must be numbers.")
+    except Exception as e:
+        print("Error while updating student:", e)
+    finally:
+        if cursor is not None:
+            cursor.close()
+        if conn is not None:
+            conn.close()
 
 
 def delete_student():
-    student_id = int(input("Enter student ID to delete: "))
+    conn = None
+    cursor = None
+    try:
+        conn = connect_db()
+        if conn is None:
+            print("Database connection failed.")
+            return
 
-    sql = "DELETE FROM students WHERE id = %s"
-    values = (student_id,)
+        cursor = conn.cursor()
 
-    cursor.execute(sql, values)
-    conn.commit()
+        student_id = int(input("Enter student ID to delete: "))
 
-    if cursor.rowcount > 0:
-        print("Student deleted successfully!")
-    else:
-        print("Student not found.")
+        sql = "DELETE FROM students WHERE id = %s"
+        cursor.execute(sql, (student_id,))
+        conn.commit()
+
+        if cursor.rowcount == 0:
+            print("Student not found.")
+        else:
+            print("Student deleted successfully.")
+
+    except ValueError:
+        print("ID must be a number.")
+    except Exception as e:
+        print("Error while deleting student:", e)
+    finally:
+        if cursor is not None:
+            cursor.close()
+        if conn is not None:
+            conn.close()
 
 
 def view_student_by_id():
-    student_id = int(input("Enter student ID to view: "))
+    conn = None
+    cursor = None
+    try:
+        conn = connect_db()
+        if conn is None:
+            print("Database connection failed.")
+            return
 
-    sql = "SELECT * FROM students WHERE id = %s"
-    values = (student_id,)
+        cursor = conn.cursor()
 
-    cursor.execute(sql, values)
-    record = cursor.fetchone()
+        student_id = int(input("Enter student ID to view: "))
 
-    if record:
-        print(record)
-    else:
-        print("Student not found.")
+        sql = "SELECT * FROM students WHERE id = %s"
+        cursor.execute(sql, (student_id,))
+        record = cursor.fetchone()
+
+        if record is None:
+            print("Student not found.")
+        else:
+            print("\nID\tName\tAge\tCity")
+            print(f"{record[0]}\t{record[1]}\t{record[2]}\t{record[3]}")
+
+    except ValueError:
+        print("ID must be a number.")
+    except Exception as e:
+        print("Error while searching student:", e)
+    finally:
+        if cursor is not None:
+            cursor.close()
+        if conn is not None:
+            conn.close()
 
 
 while True:
@@ -108,6 +197,3 @@ while True:
             break
         case _:
             print("Invalid choice. Please try again.")
-
-cursor.close()
-conn.close()

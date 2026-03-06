@@ -1,6 +1,7 @@
 import mysql.connector
 
-def db_connect():
+
+def connect_db():
     try:
         conn = mysql.connector.connect(
             host="localhost",
@@ -9,7 +10,6 @@ def db_connect():
             database="school"
         )
         return conn
-    except mysql.connector.Error as e:
-        print(f"Error connecting to MySQL: {e}")
+    except Exception as e:
+        print("Database connection error:", e)
         return None
-    
