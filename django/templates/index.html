@@ -6,9 +6,36 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>
-        welcome to Django
-    </h1>
-    <p>Template example</p>
+    <h1>Welcome to the Index Page</h1>
+    <h2>Student Information</h2>
+  <table border="1">
+        <tr>
+           <th>Name</th>
+           <th>Age</th>
+           <th>City</th>
+            <th>Grade</th>
+        </tr>
+        {% for student in data %}
+        <tr>
+            <td>{{ student.name }}</td>
+            <td>{{ student.age }}</td>
+            <td>{{ student.city }}</td>
+            <td>
+                {% if student.marks >= 90 %}
+                    A
+                {% elif student.marks >= 80 %}
+                    B
+                {% elif student.marks >= 70 %}
+                    C
+                {% elif student.marks >= 60 %}
+                    D
+                {% else %}
+                    F
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    
 </body>
 </html>
