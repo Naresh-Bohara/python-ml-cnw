@@ -40,15 +40,6 @@ Model fields:
 
 '''
 
-class Student(models.Model):
-    name = models.CharField(max_length=100)
-    age = models.IntegerField()
-    city = models.CharField(max_length=100)
-    marks = models.IntegerField()
-
-    def __str__(self):
-        return self.name
-    
 '''
 equivalent to the following SQL statement:
 CREATE TABLE student (
@@ -59,3 +50,15 @@ CREATE TABLE student (
     marks INTEGER
 );
 '''
+
+class Students(models.Model):
+    name = models.CharField(max_length=100, null=True, blank=True)
+    age = models.IntegerField(default=18)
+    city = models.CharField(max_length=100)
+    marks = models.IntegerField()
+    email  = models.EmailField(max_length=100, unique=True)
+    is_active = models.BooleanField(default=True)
+
+    def __str__(self):
+        return self.name
+    
