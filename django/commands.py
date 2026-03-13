@@ -176,3 +176,36 @@ $includeLine = "    path('', include('app.urls')),"
 Write-Host "Starting server at http://127.0.0.1:8000/" -ForegroundColor Green
 python manage.py runserver
 '''
+
+
+'''
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+for making table in database: 
+1. Create model in models.py
+2. Run makemigrations command to create migration file
+-> python manage.py makemigrations
+-> This command looks at the changes you have made to your models and creates a migration file that describes those changes. The migration file is a Python script that contains instructions for how to modify the database schema to match the changes you made to your models.
+3. Run migrate command to apply the migration and create the table in the database
+-> python manage.py migrate
+-> This command applies the migration file to the database, creating the necessary tables and columns based on the model definitions. It ensures that the database schema is in sync with your Django models, allowing you to store and manage data according to the structure defined in your models.
+'''
+
+'''
+------------------ create super user to access admin interface ------------------
+python manage.py createsuperuser
+- This command prompts you to enter a username, email address, and password for the superuser account. Once you have created the superuser, you can log in to the Django admin interface using the credentials you provided. The admin interface allows you to manage your models and data through a user-friendly web interface, making it easier to perform CRUD (Create, Read, Update, Delete) operations on your database records.
+'''
+
+'''
+--------- register the model in admin.py to manage it through Django admin interface ---------
+In order to manage your model through the Django admin interface, you need to register it in the
+from django.contrib import admin
+from .models import Students
+
+- admin.site.register(Students)
+
+'''
+
