@@ -66,8 +66,10 @@ steps for new django project:
 
 17. create templates folder in your app and create html files for your views.
 
+18. if your templates are in a separate folder, make sure to add the path to the `TEMPLATES` setting in your project's `settings.py` file.
+    - `TEMPLATES = [ { ... 'DIRS': [BASE_DIR / 'templates'], ... } ]`
 
-15. Start the development server again and access the admin panel at http://127.0.0.1:8000/admin/
+19. Start the development server again and access the admin panel at http://127.0.0.1:8000/admin/
     log in with the superuser credentials you created and you should see your model listed there. You can add, edit, and delete records from the admin panel.
     - `python manage.py runserver`
 

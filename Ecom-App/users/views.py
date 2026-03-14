@@ -1,11 +1,11 @@
 from django.shortcuts import render
-from .models import Students
+from .models import User
 
 # Create your views here.
 
 def index(request):
-    students = Students.objects.all()
-    context = {'students': students}
+    users = User.objects.all()
+    context = {'users': users}
     return render(request, 'index.html', context)
 
 def home(request):

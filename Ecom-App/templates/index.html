@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users Page</title>
+</head>
+<body>
+    <h1>Welcome to EcomApp </h1>
+    <h2>User Information</h2>
+
+    <table border="1" cellpadding="10">
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>City</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Address</th>
+            <th>Active</th>
+            <th>Created At</th>
+        </tr>
+
+        {% for user in users %}
+        <tr>
+            <td>{{ user.name }}</td>
+            <td>{{ user.age }}</td>
+            <td>{{ user.city }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.phone }}</td>
+            <td>{{ user.address }}</td>
+            <td>{{ user.is_active }}</td>
+            <td>{{ user.created_at }}</td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="8">No users found.</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <br>
+    <a href="/home/">Go to Home Page</a>
+</body>
+</html>
