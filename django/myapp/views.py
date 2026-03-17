@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from .models import Students
 
 # Create your views here.
@@ -39,7 +39,22 @@ def home(request):
 #     for ordering by multiple fields
 #     students = Students.objects.order_by('age', 'name')
 
-
-
     context = {'students': students}
     return render(request, 'home.html', context)
+
+def student_form(request):
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        age = request.POST.get('age')
+        marks = request.POST.get('marks')
+
+        student = Students.objects.create(
+            name=name,
+            email=email,
+            age=age,
+            marks=marks
+        )
+        student.save()
+        return redirect('/home/')
+    return render(request, 'form.html')
