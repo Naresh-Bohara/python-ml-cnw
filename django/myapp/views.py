@@ -48,12 +48,14 @@ def student_form(request):
         email = request.POST.get('email')
         age = request.POST.get('age')
         marks = request.POST.get('marks')
+        city = request.POST.get('city')
 
         student = Students.objects.create(
             name=name,
             email=email,
             age=age,
-            marks=marks
+            marks=marks,
+            city=city
         )
         student.save()
         return redirect('/home/')
