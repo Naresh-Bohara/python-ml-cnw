@@ -18,6 +18,7 @@
         <th>Marks</th>
         <th>Email</th>
         <th>Active</th>
+        <th>Actions</th>
     </tr>
 
     {% for student in students %}
@@ -28,6 +29,11 @@
         <td>{{ student.marks }}</td>
         <td>{{ student.email }}</td>
         <td>{{ student.is_active }}</td>
+        <td>
+            <a href="{% url 'edit_student' student.id %}">Edit</a>
+            <a href="{% url 'delete_student' student.id %}">Delete</a>
+        </td>
+
     </tr>
     {% endfor %}
 

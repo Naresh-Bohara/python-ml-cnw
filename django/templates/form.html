@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>{% if title %}{{ title }}{% else %}Student Form{% endif %}</title>
     <style>
         .form-control {
             width: 50%;
@@ -11,13 +11,73 @@
             margin: 5px 0;
             box-sizing: border-box;
         }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .errorlist {
+            color: red;
+            list-style: none;
+            padding: 0;
+            margin: 5px 0;
+        }
+        .btn {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        .btn-cancel {
+            background-color: #6c757d;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn-cancel:hover {
+            background-color: #545b62;
+        }
+        h1 {
+            color: #333;
+        }
     </style>
 </head>
 <body>
-<form method="POST">
+    <h1>{% if title %}{{ title }}{% else %}Student Form{% endif %}</h1>
+    
+    <form method="POST">
         {% csrf_token %}
-      {{ form }}
-      <button type="submit">Submit</button>
+        
+        {% if form.non_field_errors %}
+            <div class="errorlist">
+                {{ form.non_field_errors }}
+            </div>
+        {% endif %}
+        
+        {% for field in form %}
+            <div class="form-group">
+                {{ field.label_tag }}
+                {{ field }}
+                {% if field.errors %}
+                    <ul class="errorlist">
+                        {% for error in field.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+                {% if field.help_text %}
+                    <small style="color: #666;">{{ field.help_text }}</small>
+                {% endif %}
+            </div>
+        {% endfor %}
+        
+        <button type="submit" class="btn">
+            {% if is_edit %}Update Student{% else %}Add Student{% endif %}
+        </button>
+        <a href="{% url 'home' %}" class="btn btn-cancel">Cancel</a>
     </form>
 </body>
 </html>

@@ -1,4 +1,4 @@
-from django.shortcuts import redirect, render
+from django.shortcuts import get_object_or_404, redirect, render
 
 from myapp.form import StudentForm
 from .models import Students
@@ -65,11 +65,11 @@ def home(request):
 
 def student_form(request):
     if request.method == 'POST':
-        form  = StudentForm(request.POST)
+        form = StudentForm(request.POST)
         
         if form.is_valid():
             print(form.cleaned_data)
-            data  = form.cleaned_data
+            data = form.cleaned_data
             student = Students.objects.create(
                 name=data['name'],
                 email=data['email'],
@@ -77,10 +77,43 @@ def student_form(request):
                 city=data['city'],
                 marks=data['marks']
             )
-            student.save()
-            return redirect('/home/')
+            return redirect('home')  # Use name instead of hardcoded path
 
     else:
         form = StudentForm()
-    context = {'form': form}
+    
+    context = {
+        'form': form,
+        'is_edit': False,  # Indicates this is for adding new student
+        'title': 'Add New Student'
+    }
     return render(request, 'form.html', context)
+
+def edit_student(request, id):  # Changed from student_id to id
+    student = get_object_or_404(Students, id=id)  # Use id here too
+    
+    if request.method == 'POST':
+        form = StudentForm(request.POST, instance=student)
+        if form.is_valid():
+            form.save()
+            return redirect('home')
+    else:
+        form = StudentForm(instance=student)
+    
+    context = {
+        'form': form,
+        'student': student,
+        'is_edit': True,
+        'title': f'Edit Student: {student.name}'
+    }
+    return render(request, 'form.html', context)
+
+def delete_student(request, id):  # Also fix delete_student
+    student = get_object_or_404(Students, id=id)
+    
+    if request.method == 'POST':
+        student.delete()
+        return redirect('home')
+    
+    context = {'student': student}
+    return render(request, 'delete_student.html', context)
