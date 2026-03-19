@@ -1,4 +1,6 @@
 from django.shortcuts import redirect, render
+
+from myapp.form import StudentForm
 from .models import Students
 
 # Create your views here.
@@ -42,21 +44,43 @@ def home(request):
     context = {'students': students}
     return render(request, 'home.html', context)
 
+# def student_form(request):
+#     if request.method == 'POST':
+#         name = request.POST.get('name')
+#         email = request.POST.get('email')
+#         age = request.POST.get('age')
+#         marks = request.POST.get('marks')
+#         city = request.POST.get('city')
+
+#         student = Students.objects.create(
+#             name=name,
+#             email=email,
+#             age=age,
+#             marks=marks,
+#             city=city
+#         )
+#         student.save()
+#         return redirect('/home/')
+#     return render(request, 'form.html')
+
 def student_form(request):
     if request.method == 'POST':
-        name = request.POST.get('name')
-        email = request.POST.get('email')
-        age = request.POST.get('age')
-        marks = request.POST.get('marks')
-        city = request.POST.get('city')
+        form  = StudentForm(request.POST)
+        
+        if form.is_valid():
+            print(form.cleaned_data)
+            data  = form.cleaned_data
+            student = Students.objects.create(
+                name=data['name'],
+                email=data['email'],
+                age=data['age'],
+                city=data['city'],
+                marks=data['marks']
+            )
+            student.save()
+            return redirect('/home/')
 
-        student = Students.objects.create(
-            name=name,
-            email=email,
-            age=age,
-            marks=marks,
-            city=city
-        )
-        student.save()
-        return redirect('/home/')
-    return render(request, 'form.html')
+    else:
+        form = StudentForm()
+    context = {'form': form}
+    return render(request, 'form.html', context)

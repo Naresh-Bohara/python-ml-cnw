@@ -4,18 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
+    <style>
+        .form-control {
+            width: 50%;
+            padding: 10px;
+            margin: 5px 0;
+            box-sizing: border-box;
+        }
+    </style>
 </head>
 <body>
-    <form action="" method="post">
+<form method="POST">
         {% csrf_token %}
-        Name: <input type="text" name="name"><br> <br>
-        Email: <input type="email" name="email"><br><br>
-        Age: <input type="number" name="age"><br><br>
-        City: <input type="text" name="city"><br><br>
-        Marks: <input type="number" name="marks"><br><br>
-        <input type="submit" value="Submit">
-
-
+      {{ form }}
+      <button type="submit">Submit</button>
     </form>
 </body>
 </html>
