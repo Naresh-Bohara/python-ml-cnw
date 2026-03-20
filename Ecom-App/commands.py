@@ -73,4 +73,45 @@ steps for new django project:
     log in with the superuser credentials you created and you should see your model listed there. You can add, edit, and delete records from the admin panel.
     - `python manage.py runserver`
 
+20. To send data from the backend to the frontend, you can create views that query your models and pass the data to templates. For example, you can create a view that retrieves all records from a model and renders them in a template:
+    - from django.shortcuts import render
+    - from .models import ModelName
+
+    - def model_list(request):
+        - models = ModelName.objects.all()
+        - return render(request, 'model_list.html', {'models': models})
+
+21. In the template (model_list.html), you can loop through the data and display it:
+    - {% for model in models %}
+        - <p>{{ model.field_name }}</p>
+    - {% endfor %}
+
+22. To create a REST API, you can use Django REST Framework. First, install it using:
+    - `pip install djangorestframework`
+    then add it to your `INSTALLED_APPS` in `settings.py`:
+    - `INSTALLED_APPS = [ ... 'rest_framework', ... ]`
+    Next, create a serializer for your model in a new file called `serializers.py` in your app:
+    - from rest_framework import serializers
+    - from .models import ModelName
+
+    - class ModelNameSerializer(serializers.ModelSerializer):
+        - class Meta:
+            - model = ModelName
+            - fields = '__all__'
+    Then, create a viewset in your `views.py` file to handle API requests:
+    - from rest_framework import viewsets
+    - from .models import ModelName
+    - from .serializers import ModelNameSerializer
+    - class ModelNameViewSet(viewsets.ModelViewSet):
+        - queryset = ModelName.objects.all()
+        - serializer_class = ModelNameSerializer
+    Finally, create a router in your app's `urls.py` file to route API requests to the viewset:
+    - from rest_framework import routers
+    - from .views import ModelNameViewSet
+    - router = routers.DefaultRouter()
+    - router.register(r'models', ModelNameViewSet)
+    - urlpatterns = [
+        - path('', include(router.urls)),
+    ]
+
 '''
