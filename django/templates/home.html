@@ -1,9 +1,11 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student List</title>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
 </head>
 <body>
 
@@ -38,6 +40,9 @@
     {% endfor %}
 
 </table>
+
+<img src="{% static 'images/img_3.avif' %}" alt="">
+<img src="{% static "images/img_a.webp" %}" alt="">
 
 </body>
 </html>
