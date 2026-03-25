@@ -4,7 +4,7 @@ from myapp.models import Students
 class StudentForm(forms.ModelForm):
     class Meta:
         model = Students
-        fields = ['name', 'email', 'age', 'marks', 'city']
+        fields = ['name', 'email', 'age', 'marks', 'city', 'image']
         widgets = {
             'name': forms.TextInput(attrs={
                 'class': 'form-control name-input',

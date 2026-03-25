@@ -55,6 +55,7 @@ class Students(models.Model):
     name = models.CharField(max_length=100, null=True, blank=True)
     age = models.IntegerField(default=18)
     city = models.CharField(max_length=100)
+    image = models.ImageField(upload_to='students/', null=True, blank=True)
     marks = models.IntegerField()
     email  = models.EmailField(max_length=100, unique=True)
     is_active = models.BooleanField(default=True)

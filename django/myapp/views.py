@@ -65,7 +65,7 @@ def home(request):
 
 def student_form(request):
     if request.method == 'POST':
-        form = StudentForm(request.POST)
+        form = StudentForm(request.POST, request.FILES)  
         
         if form.is_valid():
             print(form.cleaned_data)
@@ -75,7 +75,8 @@ def student_form(request):
                 email=data['email'],
                 age=data['age'],
                 city=data['city'],
-                marks=data['marks']
+                marks=data['marks'],
+                image=data['image'] 
             )
             return redirect('home')  # Use name instead of hardcoded path
 

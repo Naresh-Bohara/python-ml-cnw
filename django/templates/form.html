@@ -48,7 +48,7 @@
 <body>
     <h1>{% if title %}{{ title }}{% else %}Student Form{% endif %}</h1>
     
-    <form method="POST">
+    <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         
         {% if form.non_field_errors %}
