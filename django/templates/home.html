@@ -21,6 +21,7 @@
         <th>Email</th>
         <th>Active</th>
         <th>Actions</th>
+        <th>Image</th>
     </tr>
 
     {% for student in students %}
@@ -31,6 +32,14 @@
         <td>{{ student.marks }}</td>
         <td>{{ student.email }}</td>
         <td>{{ student.is_active }}</td>
+        
+      <td>
+          {% if student.image %}
+        <img src="{{ student.image.url }}" alt="Student Image" width="100">
+            
+        {% endif %}
+      </td>
+            
         <td>
             <a href="{% url 'edit_student' student.id %}">Edit</a>
             <a href="{% url 'delete_student' student.id %}">Delete</a>

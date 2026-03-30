@@ -118,3 +118,6 @@ def delete_student(request, id):  # Also fix delete_student
     
     context = {'student': student}
     return render(request, 'delete_student.html', context)
+
+def child(request):
+    return render(request, 'myapp/child.html')
