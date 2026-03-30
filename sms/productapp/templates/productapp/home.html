@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}Home | Stock Management System{% endblock %}
+
+{% block content %}
+<div class="bg-white shadow-md rounded-xl p-8">
+    <h2 class="text-3xl font-bold text-emerald-600 mb-4">
+        Welcome to Stock Management System
+    </h2>
+
+    <p class="text-lg text-gray-600 mb-6">
+        Manage your product stock, monitor inventory, and keep records organized.
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        <div class="bg-emerald-50 rounded-lg p-6 shadow-sm">
+            <h3 class="text-xl font-semibold mb-2">Products</h3>
+            <p class="text-gray-600">Add, update, and manage product details.</p>
+        </div>
+
+        <div class="bg-green-50 rounded-lg p-6 shadow-sm">
+            <h3 class="text-xl font-semibold mb-2">Stock Tracking</h3>
+            <p class="text-gray-600">Monitor available quantity and stock status.</p>
+        </div>
+
+    </div>
+    
+</div>
+<div class="mt-8">
+        <a href="" class="bg-emerald-600 text-white py-2 px-4 rounded-lg hover:bg-emerald-700">View Stock</a>
+    </div>
+{% endblock %}
