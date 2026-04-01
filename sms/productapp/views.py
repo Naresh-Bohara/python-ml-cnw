@@ -9,3 +9,7 @@ def home(request):
 def view_stock(request):
     products = Product.objects.all()
     return render(request, 'productapp/stock.html', {'products': products})
+
+def view_products(request):
+    products = Product.objects.all().order_by('-id')
+    return render(request, 'productapp/products.html', {'products': products})
