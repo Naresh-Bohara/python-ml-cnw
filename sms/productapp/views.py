@@ -8,6 +8,7 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
+from django.db.models import Q
 
 
 # Create your views here.
@@ -16,9 +17,20 @@ def home(request):
 
 @login_required(login_url='login')
 def view_stock(request):
-    products = Product.objects.all()
-    return render(request, 'productapp/stock.html', {'products': products})
+    query = request.GET.get('q', '')  
 
+    if query:
+        products = Product.objects.filter(
+            Q(name__icontains=query) | 
+            Q(category__name__icontains=query)
+        )
+    else:
+        products = Product.objects.all()
+
+    return render(request, 'productapp/stock.html', {
+        'products': products,
+        'query': query
+    })
 @login_required(login_url='login')
 def view_products(request):
     products = Product.objects.all().order_by('-id')
