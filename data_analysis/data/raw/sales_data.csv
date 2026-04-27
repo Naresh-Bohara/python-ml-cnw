@@ -1,0 +1,13 @@
+OrderID,Name,Dept,City,Age,Experience,Month,Sales
+1,Ram,IT,Kathmandu,25,2,Jan,200
+2,Ram,IT,Kathmandu,25,2,Feb,250
+3,Ram,IT,Kathmandu,25,2,Mar,300
+4,Shyam,HR,Pokhara,30,5,Jan,150
+5,Shyam,HR,Pokhara,30,5,Feb,180
+6,Shyam,HR,Pokhara,30,5,Mar,220
+7,Hari,Finance,Lalitpur,28,4,Jan,300
+8,Hari,Finance,Lalitpur,28,4,Feb,350
+9,Hari,Finance,Lalitpur,28,4,Mar,400
+10,Sita,IT,Kathmandu,32,6,Jan,220
+11,Sita,IT,Kathmandu,32,6,Feb,260
+12,Sita,IT,Kathmandu,32,6,Mar,310
